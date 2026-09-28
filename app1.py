@@ -12,42 +12,96 @@ model_columns = joblib.load('model_columns.pkl')
 # Custom CSS for black/white/red theme
 st.markdown("""
     <style>
+
+    /* PREDICT BUTTON */
     div.stButton > button {
-        background-color: #FF3D3D;
-        color: black;
+        background-color: #FF3D3D !important;
+        color: black !important;
         font-size: 20px;
         font-weight: 700;
         padding: 12px 40px;
         border-radius: 8px;
         border: none;
     }
+
     div.stButton > button:hover {
-        background-color: #E62E2E;
-        color: black;
+        background-color: #E62E2E !important;
+        color: black !important;
     }
-    div[data-baseweb="select"] div {
+
+
+    /* SELECTBOX MAIN AREA */
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] {
+        background-color: #000000 !important;
+    }
+
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] div {
         background-color: #000000 !important;
         color: white !important;
     }
+
+    /* SELECTBOX OPEN BUTTON - THIS IS THE WHITE BLOCK */
+    div[data-testid="stSelectbox"] button[role="combobox"] {
+        background-color: #000000 !important;
+        color: white !important;
+        border: none !important;
+    }
+
+    /* SELECTBOX ARROW */
+    div[data-testid="stSelectbox"] button[role="combobox"] svg {
+        fill: white !important;
+        color: white !important;
+    }
+
+    /* DROPDOWN OPTIONS */
+    li[role="option"] {
+        color: white !important;
+        background-color: #000000 !important;
+    }
+
+    li[role="option"]:hover {
+        background-color: #222222 !important;
+        color: white !important;
+    }
+
+
+    /* NUMBER INPUT */
+    div[data-testid="stNumberInput"] > div {
+        background-color: #000000 !important;
+        border-radius: 6px !important;
+    }
+
+    div[data-testid="stNumberInput"] input {
+        background-color: #000000 !important;
+        color: white !important;
+        border-radius: 6px 0 0 6px !important;
+    }
+
+    div[data-testid="stNumberInput"] button {
+        background-color: #000000 !important;
+        color: white !important;
+        border: none !important;
+    }
+
+    div[data-testid="stNumberInput"] button svg {
+        fill: white !important;
+        color: white !important;
+    }
+
+
+    /* GENERAL INPUT */
     input {
         background-color: #000000 !important;
         color: white !important;
         border-radius: 6px;
     }
-    li[role="option"] {
-        color: white !important;
-        background-color: #000000 !important;
-    }
+
+
+    /* METRICS */
     [data-testid="stMetricValue"] {
         color: white !important;
     }
-    svg {
-        fill: white !important;
-    }
-    button[data-testid="stNumberInputStepDown"] svg,
-    button[data-testid="stNumberInputStepUp"] svg {
-        fill: black !important;
-    }
+
     </style>
 """, unsafe_allow_html=True)
 
